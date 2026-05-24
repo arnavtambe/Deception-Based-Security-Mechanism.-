@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Access Portal</title>
+    <style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+        min-height: 100vh;
+        background: linear-gradient(135deg, #0f172a, #1e3a8a, #2563eb);
+        color: #1e293b;
+    }
+
+    .navbar {
+        background: rgba(15, 23, 42, 0.75);
+        backdrop-filter: blur(12px);
+        color: white;
+        padding: 18px 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    }
+
+    .navbar h1 {
+        font-size: 22px;
+        font-weight: 600;
+    }
+
+    .navbar a {
+        color: #e2e8f0;
+        text-decoration: none;
+        margin-left: 20px;
+        font-size: 15px;
+        transition: 0.3s;
+    }
+
+    .navbar a:hover {
+        color: #93c5fd;
+    }
+
+    .hero {
+        text-align: center;
+        padding: 60px 20px 30px;
+        color: white;
+    }
+
+    .hero h2 {
+        font-size: 42px;
+        margin-bottom: 12px;
+        font-weight: 700;
+    }
+
+    .hero p {
+        color: #dbeafe;
+        font-size: 17px;
+    }
+
+    .container {
+        display: flex;
+        justify-content: center;
+        gap: 35px;
+        padding: 40px;
+        flex-wrap: wrap;
+    }
+
+    .card {
+        background: rgba(255, 255, 255, 0.12);
+        backdrop-filter: blur(18px);
+        width: 400px;
+        border-radius: 18px;
+        padding: 30px;
+        box-shadow: 0 8px 30px rgba(0,0,0,0.25);
+        border: 1px solid rgba(255,255,255,0.18);
+        transition: 0.3s ease;
+        color: white;
+    }
+
+    .card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 12px 35px rgba(0,0,0,0.35);
+    }
+
+    .card h3 {
+        margin-bottom: 12px;
+        color: white;
+        font-size: 28px;
+    }
+
+    .card p {
+        color: #dbeafe;
+        margin-bottom: 20px;
+        font-size: 15px;
+        line-height: 1.5;
+    }
+
+    input {
+        width: 100%;
+        padding: 13px;
+        margin-bottom: 14px;
+        border: 1px solid rgba(255,255,255,0.25);
+        border-radius: 10px;
+        font-size: 14px;
+        background: rgba(255,255,255,0.15);
+        color: white;
+    }
+
+    input::placeholder {
+        color: #dbeafe;
+    }
+
+    input:focus {
+        outline: none;
+        border-color: #93c5fd;
+        background: rgba(255,255,255,0.2);
+    }
+
+    button {
+        width: 100%;
+        padding: 13px;
+        background: linear-gradient(90deg, #2563eb, #1d4ed8);
+        color: white;
+        border: none;
+        border-radius: 10px;
+        font-size: 15px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: 0.3s ease;
+    }
+
+    button:hover {
+        transform: scale(1.02);
+        background: linear-gradient(90deg, #1d4ed8, #1e40af);
+    }
+
+    .admin-link {
+        text-align: center;
+        margin-top: 18px;
+    }
+
+    .admin-link a {
+        color: #fca5a5;
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+
+    .admin-link a:hover {
+        color: #fecaca;
+    }
+
+    .footer {
+        text-align: center;
+        padding: 20px;
+        color: #dbeafe;
+        font-size: 13px;
+        margin-top: 20px;
+    }
+</style>
+</head>
+<body>
+
+    <div class="navbar">
+        <h1>Secure Access Portal</h1>
+        <div>
+            <a href="/">Home</a>
+            <a href="/user-login">User Login</a>
+            <a href="/secure-login">Secure Access</a>
+        </div>
+    </div>
+
+    <div class="hero">
+        <h2>Enterprise Security Access System</h2>
+        <p>Secure authentication portal for employees and privileged administrative access.</p>
+    </div>
+
+    <div class="container">
+
+        <!-- Real User Login -->
+        <div class="card">
+            <h3>User Login</h3>
+            <p>Authorized employees may securely log in using their assigned credentials.</p>
+            <form action="/user-login" method="POST">
+                <input type="text" name="username" placeholder="Enter username" required>
+                <input type="password" name="password" placeholder="Enter password" required>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+
+        <!-- Secure Access Honeypot -->
+        <div class="card">
+            <h3>Privileged Secure Access</h3>
+            <p>Restricted administrative authentication for high-level internal access only.</p>
+            <form action="/secure-login" method="POST">
+                <input type="text" name="username" placeholder="Admin username" required>
+                <input type="password" name="password" placeholder="Admin password" required>
+                <button type="submit">Access Secure Panel</button>
+            </form>
+
+            <div class="admin-link">
+                <a href="/admin">Admin Console</a>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="footer">
+        © 2026 Enterprise Security Systems | Protected Access Environment
+    </div>
+
+</body>
+</html>
